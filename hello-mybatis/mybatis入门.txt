@@ -1,0 +1,8 @@
+本模块完成功能：1.对用户的增删改查。
+
+mybatatis 的中文文档：http://www.mybatis.org/mybatis-3/zh/index.html
+
+git 项目地址：https://github.com/mybatis/mybatis-3
+
+如何查看mybatis 的最新版本:
+在git项目地址下，的Download 下介绍了snapshot 和稳定版本的最新版本号。
