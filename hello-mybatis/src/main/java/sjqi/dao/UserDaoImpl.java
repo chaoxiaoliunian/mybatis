@@ -31,7 +31,11 @@ public class UserDaoImpl implements IUserDataDao {
     }
 
     public int deleteUser(int id) {
-        return 0;
+        SqlSession sqlSession=sqlSessionFactory.openSession();
+        int num=sqlSession.delete("user.deleteOne",id);
+        sqlSession.commit();
+        sqlSession.close();
+        return num;
     }
 
     public int selectOne(int id) {

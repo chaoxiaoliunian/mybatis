@@ -32,7 +32,14 @@ public class TestUserDaoImpl {
     public void testInsertOne() {
         init();
         UserDaoImpl user = new UserDaoImpl(sqlSessionFactory);
-        int num=user.insertOne(new UserData("黄晓明","男",30,"北京二环"));
+        int num=user.insertOne(new UserData("anglerbaby","女",30,"北京二环"));
+        System.out.println(num);
+    }
+    @Test
+    public void testDeleteOne(){
+        init();
+        UserDaoImpl user = new UserDaoImpl(sqlSessionFactory);
+        int num=user.deleteUser(1);
         System.out.println(num);
     }
 }
