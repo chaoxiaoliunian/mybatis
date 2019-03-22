@@ -1,12 +1,6 @@
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 import sjqi.dao.UserDaoImpl;
 import sjqi.model.UserData;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * @ClassName TestUserDaoImpl
@@ -15,7 +9,7 @@ import java.io.InputStream;
  * @Date 11:45 2019/3/22
  * @Version 1.0
  **/
-public class TestUserDaoImpl extends TestInit{
+public class TestUserDaoImpl extends TestInit {
     @Test
     public void testInsertOne() {
         init();
