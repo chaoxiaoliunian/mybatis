@@ -19,11 +19,15 @@ public class UserDaoImpl implements IUserDataDao {
     }
 
     public int insertOne(UserData userData) {
+        //插入一个用户，并返回id
+
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        int resultId = sqlSession.insert("user.insertOne", userData);
+        //result 1：操作成功 0:操作不成功
+        int result = sqlSession.insert("user.insertOne", userData);
         sqlSession.commit();
         sqlSession.close();
-        return resultId;
+        //xml 中配置了selectKey属性，会将数据库中的id存入java对象中。
+        return userData.getId();
     }
 
     public int modifyUser(UserData userData) {

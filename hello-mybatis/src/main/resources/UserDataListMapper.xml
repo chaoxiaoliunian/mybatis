@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--1.命名空间和接口包名一样；2.id 和方法名一样;3.入参类型一样;4.返回值类型一样-->
+<mapper namespace="sjqi.dao.IUserLIstData">
+    <insert id="insertUserList" parameterType="java.util.List">
+        insert into userdata (username, age, sex, addr) values
+        <foreach collection="array" item="user" index="index" separator=",">
+            (#{user.username},#{user.age},#{user.sex},#{user.addr})
+        </foreach>
+    </insert>
+</mapper>

@@ -3,7 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
-    <insert id="insertOne" parameterType="sjqi.model.UserData">
+    <insert id="insertOne" parameterType="sjqi.model.UserData" >
+        <!-- 在插入之后执行查询id操作，将id值设置到原对象中-->
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select LAST_INSERT_ID();
+        </selectKey>
         insert into userdata (username, age, sex, addr) values (#{username}, #{age}, #{sex}, #{addr});
     </insert>
     <delete id="deleteOne" parameterType="int">

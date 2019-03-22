@@ -15,25 +15,13 @@ import java.io.InputStream;
  * @Date 11:45 2019/3/22
  * @Version 1.0
  **/
-public class TestUserDaoImpl {
-    SqlSessionFactory sqlSessionFactory;
-
-    public void init() {
-        InputStream inputStream = null;
-        try {
-            inputStream = Resources.getResourceAsStream("mybatis-config.xml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-    }
-
+public class TestUserDaoImpl extends TestInit{
     @Test
     public void testInsertOne() {
         init();
         UserDaoImpl user = new UserDaoImpl(sqlSessionFactory);
         //TODO: 编写随机产生姓名，性别，年龄，地址的函数。
-        int num = user.insertOne(new UserData("黄晓明", "男", 30, "北京二环"));
+        int num = user.insertOne(new UserData("黄晓明03", "男", 30, "北京二环"));
         System.out.println(num);
     }
 
