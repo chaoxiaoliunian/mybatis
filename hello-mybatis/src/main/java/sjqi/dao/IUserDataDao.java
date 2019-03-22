@@ -40,6 +40,6 @@ public interface IUserDataDao {
      * @param id
      * @return
      */
-    int selectOne(int id);
+    UserData selectOne(int id);
 
 }

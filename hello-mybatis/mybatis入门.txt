@@ -7,5 +7,15 @@ git 项目地址：https://github.com/mybatis/mybatis-3
 如何查看mybatis 的最新版本:
 在git项目地址下，的Download 下介绍了snapshot 和稳定版本的最新版本号。
 
-1.引入jar包。
+搭建mybatis 框架步骤：
+1.引入mybatis,mysql,junit的jar包。
 2.配置数据库连接。
+3.编写接口，空的实现类(包含SqlSessionFactory成员变量)。
+4.编写测试(测试类读入xml配置，创建会话工厂)，编写实现类(a.编写sql-xml,b.调用sqlsession。c.提交并返回结果。d.关闭)。
+
+注意：新建model必须保证有空构造，否则在查询时会引发异常如下：
+org.apache.ibatis.exceptions.PersistenceException:
+### Error querying database.  Cause: org.apache.ibatis.executor.result.ResultMapException: Error attempting to get column 'sex' from result set.  Cause: java.sql.SQLException: Invalid value for getInt() - '男'
+### The error may exist in UserDataMapper.xml
+
+

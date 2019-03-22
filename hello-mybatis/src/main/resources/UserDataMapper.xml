@@ -4,9 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
     <insert id="insertOne" parameterType="sjqi.model.UserData">
-        insert into userdata(username,age,sex,addr) values(#{username},#{age},#{sex},#{addr});
+        insert into userdata (username, age, sex, addr) values (#{username}, #{age}, #{sex}, #{addr});
     </insert>
     <delete id="deleteOne" parameterType="int">
-        delete from userdata where id=#{value   }
+        delete from userdata
+        where id = #{value   }
     </delete>
+    <update id="updateOne" parameterType="sjqi.model.UserData">
+        update userdata
+        set username = #{username}, age = #{age}, sex = #{sex}, addr = #{addr}
+        where id = #{id}
+    </update>
+    <select id="findOne" parameterType="int" resultType="sjqi.model.UserData">
+        select * from userdata where id=#{value}
+    </select>
 </mapper>

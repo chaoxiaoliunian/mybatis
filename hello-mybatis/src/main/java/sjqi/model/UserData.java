@@ -54,10 +54,32 @@ public class UserData {
         this.addr = addr;
     }
 
+    public UserData() {
+    }
+
+    public UserData(int id, String username, String sex, int age, String addr) {
+        this.id = id;
+        this.username = username;
+        this.sex = sex;
+        this.age = age;
+        this.addr = addr;
+    }
+
     public UserData(String username, String sex, int age, String addr) {
         this.username = username;
         this.sex = sex;
         this.age = age;
         this.addr = addr;
+    }
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", sex='" + sex + '\'' +
+                ", age=" + age +
+                ", addr='" + addr + '\'' +
+                '}';
     }
 }

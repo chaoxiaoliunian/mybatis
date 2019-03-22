@@ -27,7 +27,11 @@ public class UserDaoImpl implements IUserDataDao {
     }
 
     public int modifyUser(UserData userData) {
-        return 0;
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        int resultId = sqlSession.update("user.updateOne", userData);
+        sqlSession.commit();
+        sqlSession.close();
+        return resultId;
     }
 
     public int deleteUser(int id) {
@@ -38,7 +42,10 @@ public class UserDaoImpl implements IUserDataDao {
         return num;
     }
 
-    public int selectOne(int id) {
-        return 0;
+    public UserData selectOne(int id) {
+        SqlSession sqlSession=sqlSessionFactory.openSession();
+        UserData userData=sqlSession.selectOne("user.findOne",id);
+        sqlSession.close();
+        return userData;
     }
 }
