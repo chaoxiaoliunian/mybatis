@@ -6,3 +6,6 @@ git 项目地址：https://github.com/mybatis/mybatis-3
 
 如何查看mybatis 的最新版本:
 在git项目地址下，的Download 下介绍了snapshot 和稳定版本的最新版本号。
+
+1.引入jar包。
+2.配置数据库连接。
