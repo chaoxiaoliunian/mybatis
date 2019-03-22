@@ -1,4 +1,4 @@
-package sjqi.api;
+package sjqi.dao;
 
 import sjqi.model.UserData;
 

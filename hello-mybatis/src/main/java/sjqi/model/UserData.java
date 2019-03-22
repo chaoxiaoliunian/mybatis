@@ -53,4 +53,11 @@ public class UserData {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+
+    public UserData(String username, String sex, int age, String addr) {
+        this.username = username;
+        this.sex = sex;
+        this.age = age;
+        this.addr = addr;
+    }
 }
