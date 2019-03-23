@@ -20,6 +20,7 @@ public class TestUserList extends TestInit {
         };
         init();
         SqlSession sqlSession = sqlSessionFactory.openSession();
+        //使用的是代理模式，遵循sql声明规范，无需提供实现类。
         IUserLIstData userListDao = sqlSession.getMapper(IUserLIstData.class);
         userListDao.insertUserList(userList);
         sqlSession.commit();
