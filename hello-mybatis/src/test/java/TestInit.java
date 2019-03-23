@@ -7,7 +7,7 @@ import java.io.InputStream;
 
 /**
  * @ClassName TestInit
- * @Description TODO
+ * @Description
  * @Author sjqi
  * @Date 18:34 2019/3/22
  * @Version 1.0
@@ -22,6 +22,9 @@ public abstract class TestInit {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        /**
+         * build()方法就是读取xml配置文件,将配置信息放入Configuration 文件，使用的DefaultSqlSessionFactory
+         */
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 }
