@@ -5,7 +5,7 @@ import sjqi.model.UserData;
 
 /**
  * @ClassName TestUserList
- * @Description TODO
+ * @Description TODO：完成批量删除，修改，查询，模糊查询，分页插件。
  * @Author sjqi
  * @Date 18:35 2019/3/22
  * @Version 1.0
