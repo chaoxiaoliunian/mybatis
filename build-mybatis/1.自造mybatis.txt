@@ -1,0 +1,14 @@
+1.功能描述：
+读取配置：select * from userdata where addr=#{value} 返回查询结果。
+
+2.源码阅读笔记：
+  1.主流程：加载配置文件和执行sql。
+  2.configuration 是配置文件对应的类，通过构建者不断进行赋值。
+  3.使用XPath 语法进行解析。
+  4.dom（内存要求大） sax(一行一行)  jdom dom4j。
+  5.延后解决问题：package标签。
+  6.映射文件-全局配置文件两个解析分开。
+
+设计
+1.读取xml配置文件使用dom4j。
+2.
